@@ -1,0 +1,16 @@
+.{
+    .name = .cargs,
+    .version = "1.2.1-alpha",
+    .fingerprint = 0x2fef0b3eec41ea4b, // Changing this has security and trust implications.
+    // Tracks the earliest Zig version that the package considers to be a
+    // supported use case.
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "include",
+        "LICENSE.md",
+    },
+}

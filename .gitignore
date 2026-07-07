@@ -11,3 +11,5 @@ docs/_site
 docs/.jekyll-cache
 demo/build
 demo/build.win
+zig-out/
+.zig-cache/
