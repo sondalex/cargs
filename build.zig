@@ -1,6 +1,5 @@
 const std = @import("std");
 
-
 const c_flags = [_][]const u8{
     "-std=c99",
     "-Werror=implicit-function-declaration",
@@ -19,7 +18,6 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
         .target = target,
         .link_libc = true,
-        
     });
 
     const cargs_lib = b.addLibrary(.{
@@ -27,14 +25,12 @@ pub fn build(b: *std.Build) void {
         .root_module = cargs_mod,
     });
 
-
-
     cargs_lib.root_module.addCSourceFiles(.{
         .files = &src_files,
         .flags = &c_flags,
     });
     cargs_lib.root_module.addIncludePath(b.path("include"));
-    
+
     cargs_lib.installHeadersDirectory(b.path("include"), "", .{});
     b.installArtifact(cargs_lib);
 }
